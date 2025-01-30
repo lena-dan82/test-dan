@@ -1,0 +1,3 @@
+Состав зоопарка:
+Животные: [<__main__.Bird object at 0x000002CC988BCB00>, <__main__.Mammal object at 0x000002CC988BCB30>, <__main__.Reptile object at 0x000002CC988BCE00>] 
+Сотрудники: [<__main__.ZooKeeper object at 0x000002CC988BCD70>, <__main__.Veterinarian object at 0x000002CC988DCF50>]
