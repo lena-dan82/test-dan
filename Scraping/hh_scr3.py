@@ -13,7 +13,7 @@ driver = webdriver.Chrome()
 # driver = webdriver.Chrome()
 
 # В отдельной переменной указываем сайт, который будем просматривать
-url = "https://tomsk.hh.ru/vacancies/programmist"
+url = "https://nn.hh.ru/vacancies/programmist"
 
 # Открываем веб-страницу
 driver.get(url)
@@ -23,7 +23,7 @@ time.sleep(3)
 
 # Находим все карточки с вакансиями с помощью названия класса
 # Названия классов берём с кода сайта
-vacancies = driver.find_elements(By.CLASS_NAME, 'vacancy-card--H8LvOiOGPll0jZvYpxIF')
+vacancies = driver.find_elements(By.CLASS_NAME, 'vacancy-info--ieHKDTkezpEj0Gsx')
 
 # Выводим вакансии на экран
 print(vacancies)
@@ -36,13 +36,24 @@ for vacancy in vacancies:
    try:
    # Находим элементы внутри вакансий по значению
        # Находим названия вакансии
-     title = vacancy.find_element(By.CSS_SELECTOR, 'span.vacancy-name--SYbxrgpHgHedVTkgI_cA').text
+     title = vacancy.find_element(By.CSS_SELECTOR, 'span.magritte-text___tkzIl_5-0-20').text
+     print(title)
      # Находим названия компаний
-     company = vacancy.find_element(By.CSS_SELECTOR, 'span.company-info-text--O32pGCRW0YDmp3BHuNOP').text
+     #company = vacancy.find_element(By.CSS_SELECTOR, 'span.data-qa="vacancy-serp__vacancy-employer-text"').text
+     # company = vacancy.find_element(By.CLASS_NAME, 'company-name-badges-container--ofqQHaTYRFg0JM18').text
+
+     company_ = vacancy.find_element(By.CLASS_NAME, 'company-name-badges-container--ofqQHaTYRFg0JM18')
+     print(vacancy.text)
+     company = company_.find_element(By.CSS_SELECTOR, 'span.magritte-text___tkzIl_5-0-20').text
+
+     #company = vacancy.find_element(By.CSS_SELECTOR, 'span.magritte-text___tkzIl_5-0-20').text
+     print(company)
+     salary=''
+     link =''
      # Находим зарплаты
-     salary = vacancy.find_element(By.CSS_SELECTOR, 'span.compensation-text--cCPBXayRjn5GuLFWhGTJ').text
+     #salary = vacancy.find_element(By.CSS_SELECTOR, 'span.compensation-text--cCPBXayRjn5GuLFWhGTJ').text
      # Находим ссылку с помощью атрибута 'href'
-     link = vacancy.find_element(By.CSS_SELECTOR, 'a.bloko-link').get_attribute('href')
+     #link = vacancy.find_element(By.CSS_SELECTOR, 'a.bloko-link').get_attribute('href')
 
      # Вносим найденную информацию в список
      parsed_data.append([title, company, salary, link])

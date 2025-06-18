@@ -1,39 +1,67 @@
-#Код, написанный с использованием новых селекторов.
+#Код, написанный экспертом в уроке.
+# Импортируем модуль со временем
 import time
+# Импортируем модуль csv
 import csv
+# Импортируем Selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+# Инициализируем браузер
 driver = webdriver.Chrome()
-url = "https://nn.hh.ru/vacancies/programmist"
+# Если мы используем Chrome, пишем
+# driver = webdriver.Chrome()
+
+# В отдельной переменной указываем сайт, который будем просматривать
+url = "https://tomsk.hh.ru/vacancies/programmist"
+
+# Открываем веб-страницу
 driver.get(url)
-time.sleep(6)
 
-vacancies = driver.find_elements(By.CSS_SELECTOR, 'div.vacancy-info--ieHKDTkezpEj0Gsx')
+# Задаём 3 секунды ожидания, чтобы веб-страница успела прогрузиться
+time.sleep(3)
 
+# Находим все карточки с вакансиями с помощью названия класса
+# Названия классов берём с кода сайта
+vacancies = driver.find_elements(By.CLASS_NAME, 'vacancy-card--H8LvOiOGPll0jZvYpxIF')
+
+# Выводим вакансии на экран
+print(vacancies)
+# Создаём список, в который потом всё будет сохраняться
 parsed_data = []
 
+# Перебираем коллекцию вакансий
+# Используем конструкцию try-except, чтобы "ловить" ошибки, как только они появляются
 for vacancy in vacancies:
-    try:
-        title_element = vacancy.find_element(By.CSS_SELECTOR, 'a.bloko-header-section-2')
-        title = title_element.text
-        link = title_element.get_attribute('href')
-        company = vacancy.find_element(By.CSS_SELECTOR, 'span data-qa="vacancy-serp__vacancy-employer-text"').text
+   try:
+   # Находим элементы внутри вакансий по значению
+       # Находим названия вакансии
+     title = vacancy.find_element(By.CSS_SELECTOR, 'span.vacancy-name--SYbxrgpHgHedVTkgI_cA').text
+     # Находим названия компаний
+     company = vacancy.find_element(By.CSS_SELECTOR, 'span.company-info-text--O32pGCRW0YDmp3BHuNOP').text
+     # Находим зарплаты
+     salary = vacancy.find_element(By.CSS_SELECTOR, 'span.compensation-text--cCPBXayRjn5GuLFWhGTJ').text
+     # Находим ссылку с помощью атрибута 'href'
+     link = vacancy.find_element(By.CSS_SELECTOR, 'a.bloko-link').get_attribute('href')
 
-        try:
-            salary = vacancy.find_element(By.CSS_SELECTOR, 'compensation-labels--vwum2s12fQUurc2J').text
-        except:
-            salary = "Не указана"
+     # Вносим найденную информацию в список
+     parsed_data.append([title, company, salary, link])
 
-    except Exception as e:
-        print(f"Произошла ошибка при парсинге: {e}")
-        continue
+   # Вставляем блок except на случай ошибки - в случае ошибки программа попытается продолжать
+   except:
+     print("произошла ошибка при парсинге")
+     continue
 
-    parsed_data.append([title, company, salary, link])
-
+# Закрываем подключение браузер
 driver.quit()
 
-with open("hh.csv", 'w', newline='', encoding='utf-8') as file:
+# Прописываем открытие нового файла, задаём ему название и форматирование
+# 'w' означает режим доступа, мы разрешаем вносить данные в таблицу
+with open("hh.csv", 'w',newline='', encoding='utf-8') as file:
+    # Используем модуль csv и настраиваем запись данных в виде таблицы
+    # Создаём объект
     writer = csv.writer(file)
-    writer.writerow(['Название вакансии', 'Название компании', 'Зарплата', 'Ссылка на вакансию'])
+    # Создаём первый ряд
+    writer.writerow(['Название вакансии', 'название компании', 'зарплата', 'ссылка на вакансию'])
+    # Прописываем использование списка как источника для рядов таблицы
     writer.writerows(parsed_data)

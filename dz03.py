@@ -2,15 +2,9 @@ import requests
 
 url = "https://jsonplaceholder.typicode.com/posts"
 
-params = {
-    'userId' : 1
-}
+data = {'title': 'foo', 'body': 'bar', 'userId': 1}
 
-response = requests.get(url, params=params)
+response = requests.post(url, json=data)
 
-if response.status.code == 200:
-    posts = response.json()
-    for post in posts:
-        print(post)
-else:
-    print("Error")
+print(f"Status code: {response.status_code}")
+print(f"ответ - {response.json()}")

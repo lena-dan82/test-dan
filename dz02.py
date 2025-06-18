@@ -1,10 +1,16 @@
 import requests
 
-url = "https://api.github.com/search/repositories"
+url = "https://jsonplaceholder.typicode.com/posts"
 
-params = {"q": "language:html"}
+params = {
+    'userId' : 1
+}
 
 response = requests.get(url, params=params)
 
-print(f"Status code: {response.status.code}")
-print(response.json())
+if response.status_code == 200:
+    posts = response.json()
+    for post in posts:
+        print(post)
+else:
+    print("Error")
