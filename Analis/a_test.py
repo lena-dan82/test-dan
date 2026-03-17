@@ -24,3 +24,8 @@ print(f"Стандартное отклонение по предметам - {d
 https://github.com/lena-dan82/test-dan.git
 a1_AZ01_1.py
 a1_AZ01_2.py
+
+
+ГИТ: https://github.com/lena-dan82/test-dan.git
+папка: HTML
+файл: h01.html
