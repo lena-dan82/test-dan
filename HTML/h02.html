@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Карточки пользователей</title>
+  <style>
+    body {
+      background: #f5f7fa;
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+    .cards-container {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+    }
+    .user-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      width: 280px;
+      padding: 24px 20px 20px 20px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .user-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+      background: #f0f4ff;
+    }
+    .user-photo {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+      border: 3px solid #4a90e2;
+      box-shadow: 0 2px 8px rgba(74,144,226,0.15);
+    }
+    .user-name {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #263238;
+    }
+    .user-email {
+      color: #4a90e2;
+      font-size: 0.99em;
+      margin-bottom: 10px;
+      display: block;
+      text-decoration: none;
+    }
+    .user-info {
+      font-size: 0.97em;
+      color: #555;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="cards-container">
+    <div class="user-card">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Фото" class="user-photo">
+      <div class="user-name">Иванов Сергей Павлович</div>
+      <a href="mailto:sergey.ivanov@mail.ru" class="user-email">sergey.ivanov@mail.ru</a>
+      <div class="user-info">Дата рождения: 12.05.1990</div>
+      <div class="user-info">Город: Москва</div>
+    </div>
+    <div class="user-card">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Фото" class="user-photo">
+      <div class="user-name">Петрова Анна Викторовна</div>
+      <a href="mailto:anna.petrova@yandex.ru" class="user-email">anna.petrova@yandex.ru</a>
+      <div class="user-info">Дата рождения: 23.11.1985</div>
+      <div class="user-info">Город: Санкт-Петербург</div>
+    </div>
+    <div class="user-card">
+      <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Фото" class="user-photo">
+      <div class="user-name">Сидоров Алексей Дмитриевич</div>
+      <a href="mailto:alexey.sidorov@gmail.com" class="user-email">alexey.sidorov@gmail.com</a>
+      <div class="user-info">Дата рождения: 08.07.1992</div>
+      <div class="user-info">Город: Екатеринбург</div>
+    </div>
+  </div>
+</body>
+</html>
