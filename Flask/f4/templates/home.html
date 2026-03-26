@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Лунтик и его друзья
+{% endblock %}
+
+
+{% block content %}
+
+<!-- Основной контент -->
+<main class="container my-4">
+
+    «Лунтик и его друзья» (раннее название — «Приключения Лунтика и его друзей») — российский мультсериал, ориентированный на общую аудиторию. Транслируется на телевидении с 1 сентября 2006 года по настоящее время. Ключевой темой стали приключения маленького пушистого существа Лунтика — космического пришельца, который родился на Луне и вылупился из яйца.
+    Действие происходит в лесу около пруда. Большинство персонажей — мелкие насекомые, рыбы, лягушки, пчёлы и т. п. Они олицетворяют собой взрослых и детей. Главные персонажи — дети (прежде всего Лунтик), с которыми происходят разные приключения, во время которых они познают мир и учатся взаимоотношениям в обществе.
+
+    <button type="button" class="btn btn-warning">{{link}}</button>
+
+    <!-- Секция 1: Слайдер -->
+    <section id="slider" class="mb-5">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://upload.wikimedia.org/wikipedia/ru/b/b7/Lunt-logo.png" class="d-block w-100" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=cca486cf77ab54a40683f2895cc10669394bcdd7-4462005-images-thumbs&n=13" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://avatars.mds.yandex.net/i?id=7af94cbf4e81acf8e119af12a155ffd5efc5506d-5331622-images-thumbs&n=13" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Секция 2: Карточки -->
+    <section id="cards" class="mb-5">
+        <div class="row g-4">
+            <div class="col-12 col-lg-4">
+                <div class="card h-100">
+                    <img src="https://avatars.mds.yandex.net/i?id=f9b55684ae05867d273f0a684d1932a67aaf74fc-4895906-images-thumbs&n=13" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Лунтик</h5>
+                        <p class="card-text">Главный герой сериала; необычный персонаж, похожий на аксолотля, попавший с Луны на Землю. Получил имя в честь Луны, где он родился. Покрыт сиреневой шёрсткой, две руки и две ноги, уши двойные. Сзади небольшой хвост. Умеет плавать и может дышать под водой. Хороший, добрый, правильный, отзывчивый, мягкий, искренний и справедливый. Играет на флейте. Взаимно любит Элину.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100">
+                    <img src="https://avatars.mds.yandex.net/i?id=9273e4ab3b116a07ec3c4cfd278bf9a30e1537e8-4375317-images-thumbs&n=13" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Кузя</h5>
+                        <p class="card-text">Подвижный и озорной кузнечик. Лучший друг Лунтика. Иногда вредничает, делает быстрые выводы или жульничает, но признаёт свои ошибки. Любит астрономию и спорт.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100">
+                    <img src="https://avatars.mds.yandex.net/i?id=72da61242a34f6af3eea28bd036d752bbdd7bd7a-5889060-images-thumbs&n=13" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Мила</h5>
+                        <p class="card-text">Божья коровка, лучшая подруга Лунтика. Очень женственная и ранимая. Взаимна на симпатию Пчелёнка. Часто рыдает. Любимое занятие — лепить куличики из песка. Капризная, но очень добрая и ответственная.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card h-100">
+                    <img src="https://avatars.mds.yandex.net/i?id=dd83d9e13c8c9e39ffbd31dedc885326d135097d-4212031-images-thumbs&n=13" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Пчелёнок Тёма</h5>
+                        <p class="card-text">Друг Лунтика. Ходит в школу пчёл и учится базовым навыкам насекомого. Пчелёнок трудолюбив и любознателен, но при этом очень стеснителен и психологически подавлен своей властной учительницей, хотя имеет и умеет проявлять свой характер. Отличается умом, умением считать и другим цветом чёлки (у всех остальных тёмная, а у него светлая). Влюблён в Милу.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция 3: Аккордеон -->
+    <section id="accordion" class="mb-5">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Источник
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                    <div class="accordion-body">
+                        Лунтик — бренд студии «Мельница». Основан на мультсериале «Лунтик и его друзья». Он включает в себя компьютерные игры (в том числе для мобильных устройств), игрушки, книги, журнал, одежду и многое другое. Также под торговой маркой «Лунтик» в России производятся пищевые продукты: кефир, йогурты, молоко, кисели, соки, другие напитки, мармелад, печенье и так далее.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Награды
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                    <div class="accordion-body">
+                        28 февраля 2015 года премьер-министр России Дмитрий Медведев вручил премии Правительства в области культуры за 2014 год. Среди награждённых: продюсер Александр Боярский, режиссёры Дарина Шмидт и Елена Галдобина, автор литературной концепции Сарра Ансон (Анна Саранцева) — за создание анимационного сериала для детей «Лунтик и его друзья»
+                    </div>
+                </div>
+            </div>
+                <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Эпизоды
+                    </button>
+                </h2>
+                <div id="collapseTwo2" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                    <div class="accordion-body">
+                        Первый сезон мультсериала создавался с конца 2005 по осень 2006 года. Технология создания — 2D-компьютерная анимация. Первый сезон транслировался с 1 сентября 2006 года по 26 января 2007 года. Количество серий — 80.
+                        Студия «Мельница» продолжила работу над мультсериалом и начиная с конца 2006 года по лето 2007 года производился второй сезон мультсериала и трансляция началась 4 июня, а закончилась 26 октября 2007 года. Технология производства та же (2D-компьютерная анимация). Количество серий — 50.
+                        Третий сезон начал производство в конце 2007 года. Технология производства сменилась с 2D на 3D-анимацию. Транслировался с 14 апреля по 23 декабря 2008 года. Основная часть серий была снята в 2008 году. Количество серий — 60.
+                        Четвёртый сезон снимался в 2008—2009 годах. В данный момент этот сезон самый большой с использованием 3D-анимации по количеству серий — 69. Транслировался 4 сезон с 28 декабря 2008 по 3 июля 2009 года, с учётом бонус-серий.
+                        Пятый сезон мультсериала снимался в 2009 году. Технология та же (3D-анимация). Транслировался с 12 октября 2009 по 22 марта 2010 года. Количество серий — 62.
+                        Шестой сезон создавался в 2009—2011 годах. Технология — 3D-анимация. Транслировался с 23 марта 2010 по 31 января 2011. Количество серий — 68. Последние пять серий: «Телохранитель», «Сыщики», «Смекалка», «Сюрприз для бабы Капы» и «Секрет победы» должны были быть сериями нового седьмого сезона, но в связи с началом производства сериала «Барбоскины» эти пять серий вошли в шестой сезон как бонус-серии.
+                        Спустя полтора года студия «Мельница» продолжила производство мультсериала и начала снимать седьмой сезон. Начиная с августа 2012 по мая 2013 года длилось производство седьмого сезона. Количество серий — 50. В этом сезоне меняется заставка. Первоначально транслировался с 30 мая по 21 июля 2013, а потом и с 27 ноября 2013 по 24 октября 2014 года. 7 сезон разделён на 2 части.
+                        С августа 2014 года по 2016 год студия «Мельница» производила восьмой сезон. Вышел на Карусели. Транслировался с 7 сентября 2015 по 28 февраля 2019 года. Количество серий — 65.
+                        С 2020 года по 2023 год «Мельница» производила девятый сезон. Премьера первого эпизода в обновлённой графике состоялась 5 марта 2020 года. А премьера второго эпизода в обновлённой графике состоялась 30 марта 2020 года. Два эпизода транслировались на «Культуре». Количество серий — 44.
+                        В 2023 году «Мельница» производила десятый сезон. Количество серий — 24.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+{% endblock %}

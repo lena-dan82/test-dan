@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{caption}}</title>
+</head>
+<body>
+
+<!--
+    {% if user %}
+        <p>Вы вошли  под именем {{user}}</p>
+    {% endif %} # Это конец блока if. В HTML нужно указывать конец, потому что отступы работают не так, как в Python
+-->
+
+    <p>Вы должны выложить {{number}}
+    {% if number == 1 %}
+        пост
+    {% elif number 2 <= number <= 4 %}
+        поста
+    {% else %}
+        постов
+    {% endif %}
+    </p>
+
+</body>
+</html>
