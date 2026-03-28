@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Простой блог</title>
+</head>
+<body>
+#создает класс container
+    <div class="container">
+        <h1>Анкеты</h1>
+        #создает форму с методом POST, чтобы отправлять данные из этой формы
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="title">Имя:</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="sity">Город:</label>
+                <textarea class="form-control" id="sity" name="sity" rows="1" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="hobby">Хобби:</label>
+                <textarea class="form-control" id="hobby" name="hobby" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="age">Возраст:</label>
+                <textarea class="form-control" id="age" name="age" rows="1" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить пост</button>
+        </form>
+        <hr>
+       #использует цикл for, чтобы иметь возможность публиковать посты
+        <h2>Посты</h2>
+        {% for post in posts %}
+
+        <div class="post">
+            <hr>
+            <h4>{{ post.title }}</h4>
+            <p>Город: {{ post.sity }}</p>
+            <p>Хобби: {{ post.hobby }}</p>
+            <p>Возраст: {{ post.age }}</p>
+        </div>
+        {% endfor %}
+
+    </div>
+    #подключает Bootstrap для стилизации
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
